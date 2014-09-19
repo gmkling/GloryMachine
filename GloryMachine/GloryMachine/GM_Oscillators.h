@@ -9,7 +9,7 @@
 #ifndef WaveTableSynth_Oscillators_h
 #define WaveTableSynth_Oscillators_h
 
-#include "Signal.h"
+#include "GM_Signal.h"
 
 // create wavetables
 

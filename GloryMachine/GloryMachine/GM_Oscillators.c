@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "SoundFiles.h"
-#include "Oscillators.h"
+#include "GM_Oscillators.h"
 
 // Create a sine wavetable
 void createSineWavetable(float * buffer, int sampCnt, float periods)

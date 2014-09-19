@@ -13,7 +13,7 @@
 
 // Application includes
 #include "SoundFiles.h"
-#include "Oscillators.h"
+#include "GM_Oscillators.h"
 
 // For Core Audio
 

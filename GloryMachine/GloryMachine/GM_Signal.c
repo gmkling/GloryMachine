@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "Signal.h"
+#include "GM_Signal.h"
 
 
 /*
@@ -21,7 +21,7 @@
 
 // once we implement sigTypes enum, we can indicate the type
 //void createSignal (Signal * theSig, double sRate, int numChan, float dur, int * info)
-void createSignal (Signal * theSig, double sRate, int numChan, float dur)
+void createSignal (GM_Signal * theSig, double sRate, int numChan, float dur)
 {
     // allocate and init the signal with info provided
     theSig->sampRate = sRate;
@@ -31,10 +31,12 @@ void createSignal (Signal * theSig, double sRate, int numChan, float dur)
     theSig->chanCnt = numChan;
     theSig->sampCnt = numChan*sRate*dur;
     theSig->frameCnt = theSig->sampCnt/numChan;
+    theSig->sigType = NULL;
     
-    // no file provided
-    theSig->sigFile = NULL;
-    // caller retains/frees the actual signal data
+    // no ptr provided
+    theSig->otherData = NULL;
+    
+    // caller frees the actual signal data
     theSig->sigBuf = (float *)malloc(sizeof(float)*theSig->sampCnt);
     
     return;

@@ -26,7 +26,7 @@ int create_file (const char * fname, SNDFILE ** file, SF_INFO * sfinfo)
 
 int write_file (float * buffer, SNDFILE * file, SF_INFO * sfinfo)
 {
-    int numSamps = sfinfo->frames * sfinfo->channels;
+    long long numSamps = sfinfo->frames * sfinfo->channels;
     sf_write_float (file, buffer, numSamps);
     puts (sf_strerror (file)) ;
     return 0;

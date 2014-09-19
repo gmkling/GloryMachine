@@ -10,8 +10,8 @@
 		2A24A65B19C8EA44001B697B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A65A19C8EA44001B697B /* main.cpp */; };
 		2A24A65D19C8EA44001B697B /* GloryMachine.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2A24A65C19C8EA44001B697B /* GloryMachine.1 */; };
 		2A24A66819C8EAD0001B697B /* AudioIO_mac.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A66319C8EAD0001B697B /* AudioIO_mac.c */; };
-		2A24A66A19C8EAD0001B697B /* Oscillators.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A66619C8EAD0001B697B /* Oscillators.c */; };
-		2A24A66F19C8EAE8001B697B /* Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A66B19C8EAE8001B697B /* Signal.c */; };
+		2A24A66A19C8EAD0001B697B /* GM_Oscillators.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A66619C8EAD0001B697B /* GM_Oscillators.c */; };
+		2A24A66F19C8EAE8001B697B /* GM_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A66B19C8EAE8001B697B /* GM_Signal.c */; };
 		2A24A67019C8EAE8001B697B /* SoundFiles.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A24A66D19C8EAE8001B697B /* SoundFiles.c */; };
 		2A24A67419C8EBC3001B697B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24A67219C8EBC3001B697B /* CoreAudio.framework */; };
 		2A24A67719C8EBFF001B697B /* libsndfile.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24A67619C8EBFF001B697B /* libsndfile.1.dylib */; };
@@ -38,10 +38,10 @@
 		2A24A65C19C8EA44001B697B /* GloryMachine.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = GloryMachine.1; sourceTree = "<group>"; };
 		2A24A66319C8EAD0001B697B /* AudioIO_mac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AudioIO_mac.c; sourceTree = "<group>"; };
 		2A24A66419C8EAD0001B697B /* AudioIO_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioIO_mac.h; sourceTree = "<group>"; };
-		2A24A66619C8EAD0001B697B /* Oscillators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Oscillators.c; sourceTree = "<group>"; };
-		2A24A66719C8EAD0001B697B /* Oscillators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oscillators.h; sourceTree = "<group>"; };
-		2A24A66B19C8EAE8001B697B /* Signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Signal.c; sourceTree = "<group>"; };
-		2A24A66C19C8EAE8001B697B /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
+		2A24A66619C8EAD0001B697B /* GM_Oscillators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GM_Oscillators.c; sourceTree = "<group>"; };
+		2A24A66719C8EAD0001B697B /* GM_Oscillators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GM_Oscillators.h; sourceTree = "<group>"; };
+		2A24A66B19C8EAE8001B697B /* GM_Signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GM_Signal.c; sourceTree = "<group>"; };
+		2A24A66C19C8EAE8001B697B /* GM_Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GM_Signal.h; sourceTree = "<group>"; };
 		2A24A66D19C8EAE8001B697B /* SoundFiles.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SoundFiles.c; sourceTree = "<group>"; };
 		2A24A66E19C8EAE8001B697B /* SoundFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFiles.h; sourceTree = "<group>"; };
 		2A24A67219C8EBC3001B697B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreAudio.framework; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		2A24A67A19C8EC43001B697B /* sndfile.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sndfile.hh; sourceTree = "<group>"; };
 		2A24A67D19C95AA5001B697B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = ../../../../../../../../System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<group>"; };
 		2A24A67F19C95D0A001B697B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = ../../../../../../../../System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<group>"; };
+		2A24A68319CC0BD3001B697B /* GM_Ugen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM_Ugen.h; sourceTree = "<group>"; };
+		2A24A68519CC1357001B697B /* GM_Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM_Graph.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,15 +91,17 @@
 			isa = PBXGroup;
 			children = (
 				2A24A65A19C8EA44001B697B /* main.cpp */,
-				2A24A66B19C8EAE8001B697B /* Signal.c */,
-				2A24A66C19C8EAE8001B697B /* Signal.h */,
+				2A24A66B19C8EAE8001B697B /* GM_Signal.c */,
+				2A24A66C19C8EAE8001B697B /* GM_Signal.h */,
 				2A24A66D19C8EAE8001B697B /* SoundFiles.c */,
 				2A24A66E19C8EAE8001B697B /* SoundFiles.h */,
 				2A24A66319C8EAD0001B697B /* AudioIO_mac.c */,
 				2A24A66419C8EAD0001B697B /* AudioIO_mac.h */,
-				2A24A66619C8EAD0001B697B /* Oscillators.c */,
-				2A24A66719C8EAD0001B697B /* Oscillators.h */,
+				2A24A66619C8EAD0001B697B /* GM_Oscillators.c */,
+				2A24A66719C8EAD0001B697B /* GM_Oscillators.h */,
 				2A24A65C19C8EA44001B697B /* GloryMachine.1 */,
+				2A24A68319CC0BD3001B697B /* GM_Ugen.h */,
+				2A24A68519CC1357001B697B /* GM_Graph.h */,
 			);
 			path = GloryMachine;
 			sourceTree = "<group>";
@@ -175,8 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A24A66819C8EAD0001B697B /* AudioIO_mac.c in Sources */,
-				2A24A66A19C8EAD0001B697B /* Oscillators.c in Sources */,
-				2A24A66F19C8EAE8001B697B /* Signal.c in Sources */,
+				2A24A66A19C8EAD0001B697B /* GM_Oscillators.c in Sources */,
+				2A24A66F19C8EAE8001B697B /* GM_Signal.c in Sources */,
 				2A24A65B19C8EA44001B697B /* main.cpp in Sources */,
 				2A24A67019C8EAE8001B697B /* SoundFiles.c in Sources */,
 			);

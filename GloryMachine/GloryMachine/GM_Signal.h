@@ -11,7 +11,7 @@
 
 #include "sndfile.h"
 
-struct Signal
+struct GM_Signal
 {
     double sampRate;     // # of samples/second
     double sampInterval; // 1/sampRate
@@ -20,14 +20,16 @@ struct Signal
     int chanCnt;         // # of interleaved signals
     int frameCnt;        // sampCnt/chanCnt
     int sampCnt;         // total # of samples (frameCnt*sampRate*sigDur)
-    int * sigType;       // the type of signal (can be multiple types at once)
-    SNDFILE * sigFile;   // for audio files saved by sndfile.h
+    int sigType;         // the type of signal (should this be a bitmap?)
+    void * otherData;    // for misc pointers, file handles, etc.
 };
 
-typedef struct Signal Signal;
+typedef struct GM_Signal GM_Signal;
+
+enum GM_SignalTypes {kNoType, kSoundFile, kWavetable, kBuffer};
 
 // allocation
 //void createSignal (Signal * theSig, double sRate, int numChan, float dur, int * info);
-void createSignal (Signal * theSig, double sRate, int numChan, float dur);
+void createSignal (GM_Signal * theSig, double sRate, int numChan, float dur);
 
 #endif
