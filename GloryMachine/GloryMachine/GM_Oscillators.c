@@ -1,5 +1,5 @@
 //
-//  Oscillators.c
+//  GM_Oscillators.c
 //  WaveTableSynth
 //
 //  Created by Garry Kling on 8/17/14.
@@ -11,22 +11,26 @@
 #include "SoundFiles.h"
 #include "GM_Oscillators.h"
 
-// Create a sine wavetable
-void createSineWavetable(float * buffer, int sampCnt, float periods)
+
+// Wavetable Oscillator Ugens
+
+// the standard ugen method signatures
+void SineOsc_Init(SineOsc * theUgen)
 {
-    int k = 0;
-    float amplitude = 1;
-    float coeff = 2*M_PI/sampCnt;
-    
-    for (k = 0 ; k <= sampCnt ; k++)
-    {
-        buffer[k] = amplitude * sinf(periods * k * coeff);
-    }
-    
-    k++;
-    buffer[k] = 0;
-    
+  // Instance specific initialization/allocation
 }
+
+void SineOsc_Retire(SineOsc * theUgen)
+{
+  // Instance specific deallocation
+}
+
+void SineOsc_Calc(SineOsc * theUgen, int nSamps)
+{
+    // bread and butter processing of the current buffer
+    // based on the wavetableOSC below
+}
+
 
 // Simple interpolating wavetable oscillator
 void wavetableOsc(float * buffer, int bufferSize, float * wavetable, int wavetableSize, float freq, float amp, float dur)
@@ -49,12 +53,34 @@ void wavetableOsc(float * buffer, int bufferSize, float * wavetable, int wavetab
         watchMe = w1 + ((w2-w1)*indexRem);
         buffer[n] = watchMe*amp;
         
-        // manage phasor
+        // manage phasor (increment or wrap around
         if (indexInt<wavetableSize) {i += phaseIncr;} else {i -= wavetableSize;}
     }
 }
 
+
+
+//  Retired functions
+// Create a sine wavetable
+void createSineWavetable(float * buffer, int sampCnt, float periods)
+{
+    int k = 0;
+    float amplitude = 1;
+    float coeff = 2*M_PI/sampCnt;
+    
+    for (k = 0 ; k <= sampCnt ; k++)
+    {
+        buffer[k] = amplitude * sinf(periods * k * coeff);
+    }
+    
+    k++;
+    buffer[k] = 0;
+    
+}
+
+ /*
 // Simple interpolating wavetable oscillator
+
 void wavetableOscBuf(float * buffer, int bufferSize, float * wavetable, int wavetableSize, float freq, float amp, float dur)
 {
     int numSamps = dur*SAMPLE_RATE;
@@ -93,6 +119,6 @@ void fillBufferWithSine(float * buffer, float freq)
      buffer[k] = amplitude * sinf(freq * k * coeff);
      }
 }
-
+*/
 
 

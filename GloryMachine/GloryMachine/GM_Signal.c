@@ -19,11 +19,8 @@
 
 // allocation
 
-// once we implement sigTypes enum, we can indicate the type
-//void createSignal (Signal * theSig, double sRate, int numChan, float dur, int * info)
-void createSignal (GM_Signal * theSig, double sRate, int numChan, float dur)
+void initSignal (Signal * theSig, double sRate, int numChan, float dur, int sigType, void * otherData)
 {
-    // allocate and init the signal with info provided
     theSig->sampRate = sRate;
     theSig->sampInterval = 1/sRate;
     theSig->chanCnt = numChan;
@@ -31,13 +28,33 @@ void createSignal (GM_Signal * theSig, double sRate, int numChan, float dur)
     theSig->chanCnt = numChan;
     theSig->sampCnt = numChan*sRate*dur;
     theSig->frameCnt = theSig->sampCnt/numChan;
-    theSig->sigType = NULL;
+    theSig->sigType = sigType;
     
-    // no ptr provided
-    theSig->otherData = NULL;
+    // no ptr provided in this case
+    theSig->otherData = otherData;
     
     // caller frees the actual signal data
     theSig->sigBuf = (float *)malloc(sizeof(float)*theSig->sampCnt);
     
     return;
 }
+
+void retireSignal (Signal * theSig)
+{
+    // should only be called when all users are done with it
+    // set all to NULL
+    theSig->sampRate = NULL;
+    theSig->sampInterval = NULL;
+    theSig->chanCnt = NULL;
+    theSig->sigDur = NULL;
+    theSig->chanCnt = NULL;
+    theSig->sampCnt = NULL;
+    theSig->frameCnt = NULL;
+    theSig->sigType = NULL;
+    theSig->otherData = NULL;
+    
+    // free()
+    free(theSig->sigBuf);
+    theSig = NULL;
+}
+

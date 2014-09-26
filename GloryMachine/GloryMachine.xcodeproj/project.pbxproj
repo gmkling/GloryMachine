@@ -17,6 +17,7 @@
 		2A24A67719C8EBFF001B697B /* libsndfile.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24A67619C8EBFF001B697B /* libsndfile.1.dylib */; };
 		2A24A67E19C95AA5001B697B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24A67D19C95AA5001B697B /* AudioToolbox.framework */; };
 		2A24A68019C95D0A001B697B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24A67F19C95D0A001B697B /* CoreFoundation.framework */; };
+		2ADA33A819D1EBE3002D0503 /* GM_Wavetable.c in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA33A719D1EBE3002D0503 /* GM_Wavetable.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,8 @@
 		2A24A67F19C95D0A001B697B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = ../../../../../../../../System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<group>"; };
 		2A24A68319CC0BD3001B697B /* GM_Ugen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM_Ugen.h; sourceTree = "<group>"; };
 		2A24A68519CC1357001B697B /* GM_Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM_Graph.h; sourceTree = "<group>"; };
+		2ADA33A619CD4CF0002D0503 /* GM_SynthesisContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM_SynthesisContext.h; sourceTree = "<group>"; };
+		2ADA33A719D1EBE3002D0503 /* GM_Wavetable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GM_Wavetable.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				2A24A65C19C8EA44001B697B /* GloryMachine.1 */,
 				2A24A68319CC0BD3001B697B /* GM_Ugen.h */,
 				2A24A68519CC1357001B697B /* GM_Graph.h */,
+				2ADA33A619CD4CF0002D0503 /* GM_SynthesisContext.h */,
+				2ADA33A719D1EBE3002D0503 /* GM_Wavetable.c */,
 			);
 			path = GloryMachine;
 			sourceTree = "<group>";
@@ -153,7 +158,7 @@
 		2A24A64F19C8EA44001B697B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Garry Kling";
 			};
 			buildConfigurationList = 2A24A65219C8EA44001B697B /* Build configuration list for PBXProject "GloryMachine" */;
@@ -181,6 +186,7 @@
 				2A24A66819C8EAD0001B697B /* AudioIO_mac.c in Sources */,
 				2A24A66A19C8EAD0001B697B /* GM_Oscillators.c in Sources */,
 				2A24A66F19C8EAE8001B697B /* GM_Signal.c in Sources */,
+				2ADA33A819D1EBE3002D0503 /* GM_Wavetable.c in Sources */,
 				2A24A65B19C8EA44001B697B /* main.cpp in Sources */,
 				2A24A67019C8EAE8001B697B /* SoundFiles.c in Sources */,
 			);
@@ -223,6 +229,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -255,6 +262,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -263,7 +271,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GloryMachine",
@@ -285,7 +292,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -293,7 +300,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GloryMachine",
@@ -308,7 +314,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -331,6 +337,7 @@
 				2A24A66219C8EA44001B697B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

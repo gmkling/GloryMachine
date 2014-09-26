@@ -10,29 +10,29 @@
 	<string>GloryMachine</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>324F9355-1A46-46CC-B91A-C76694A958F8</key>
+		<key>9E12F02F8C2FD0937B52E5D6CF6AD23C0CEC0029</key>
 		<string>https://github.com/gmkling/GloryMachine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GloryMachine/GloryMachine.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>324F9355-1A46-46CC-B91A-C76694A958F8</key>
+		<key>9E12F02F8C2FD0937B52E5D6CF6AD23C0CEC0029</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/gmkling/GloryMachine.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>324F9355-1A46-46CC-B91A-C76694A958F8</string>
+	<string>9E12F02F8C2FD0937B52E5D6CF6AD23C0CEC0029</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>324F9355-1A46-46CC-B91A-C76694A958F8</string>
+			<string>9E12F02F8C2FD0937B52E5D6CF6AD23C0CEC0029</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GloryMachine</string>
 		</dict>

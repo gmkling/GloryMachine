@@ -1,5 +1,5 @@
 //
-//  Signal.h
+//  GM_Signal.h
 //  WaveTableSynth
 //
 //  Created by Garry Kling on 8/18/14.
@@ -11,7 +11,8 @@
 
 #include "sndfile.h"
 
-struct GM_Signal
+
+struct Signal
 {
     double sampRate;     // # of samples/second
     double sampInterval; // 1/sampRate
@@ -24,12 +25,12 @@ struct GM_Signal
     void * otherData;    // for misc pointers, file handles, etc.
 };
 
-typedef struct GM_Signal GM_Signal;
+typedef struct Signal Signal;
 
-enum GM_SignalTypes {kNoType, kSoundFile, kWavetable, kBuffer};
+enum SignalTypes {kNoType, kSoundFile, kWavetable, kBuffer};
 
-// allocation
-//void createSignal (Signal * theSig, double sRate, int numChan, float dur, int * info);
-void createSignal (GM_Signal * theSig, double sRate, int numChan, float dur);
+// init/retire
+void initSignal (Signal * theSig, double sRate, int numChan, float dur, int sigType, void * otherData);
+void retireSignal (Signal * theSig);
 
 #endif

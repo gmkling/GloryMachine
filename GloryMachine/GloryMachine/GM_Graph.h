@@ -10,11 +10,14 @@
 #define GloryMachine_GM_Graph_h
 
 // this func retrieves a sequential optimization of the graph, like a tsort?
-typedef void (GraphOptFunc)(Graph theGraph, Ugen ** optOutput);
+// typedef void (GraphOptFunc)(Graph theGraph, Ugen ** optOutput);
 
 struct Graph {
     
-    // placeholder declaration, will contain graphs and shit
+    // The global object
+    // struct SynthesisContext * sContext;
+    
+    // placeholder declaration, will contain graph and shit
     double srate;
     double sampleDur;
     int bufSize;
@@ -23,7 +26,7 @@ struct Graph {
 
     struct Ugen ** theUgens; // ptr array for the actual graph
     
-    GraphOptFunc optFunc; // this is interchangable
+//    GraphOptFunc optFunc; // this is interchangable - the dependency tsort
     
 };
 

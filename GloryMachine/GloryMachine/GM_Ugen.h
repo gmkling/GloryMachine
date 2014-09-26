@@ -12,11 +12,13 @@
 #include "GM_Signal.h"
 #include "GM_Graph.h"
 
-// the way to get Ugens to do their thing
-typedef void (UgenFunc)(struct Ugen * theUgen, int nSamps);
+// the ways to get Ugens to do their thing
+typedef void (*UgenInit)(struct Ugen * theUgen);
+typedef void (*UgenRetire)(struct Ugen * theUgen);
+typedef void (*UgenFunc)(struct Ugen * theUgen, int nSamps);
 
 struct Cable {
-    struct Graph * parent;
+    // struct Graph * parent;
     struct Ugen * start;
     struct Ugen * end;
     
@@ -29,19 +31,24 @@ typedef struct Cable Cable;
 struct Ugen {
     // The basic unit generator services
     // interconnection in graph
-    struct Graph *parent;
+    // struct Graph *parent;
     struct Cable *ins, *outs;
     int nIns, nOuts;
     float * audioIn, * audioOut;
-    int nAudioSamps;
     bool active;
     
     // the code
-    UgenFunc doFuncPtr;
+    /* do constructors/destructors need to be stored here?
+    UgenInit newFunc;
+    UgenRetire deleteFunc;
+    */
     
-    // state is defined by subs
+    UgenFunc calcBuf;
+    
+    // state vars are defined by implementers
     
 };
 
 typedef struct Ugen Ugen;
 
+#endif
