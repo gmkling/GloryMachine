@@ -14,7 +14,7 @@
 		<string>https://github.com/gmkling/GloryMachine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GloryMachine/GloryMachine.xcodeproj/project.xcworkspace</string>
+	<string>GloryMachine/GloryMachine.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9E12F02F8C2FD0937B52E5D6CF6AD23C0CEC0029</key>

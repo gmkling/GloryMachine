@@ -98,7 +98,7 @@ int initAudioOutput(float * outputBuf)
         // Hit Play
         lInfo.mIsRunning = true;
         
-        // Prime the queue by directly calling my callback - once I have it a bit more hammered out
+        // Prime the queue by directly calling my callback 
         
         SoundBufferHandler(&lInfo, lInfo.mQueue, lInfo.mBuffers[i]);
     }

@@ -22,14 +22,20 @@
 
 int main(int argc, const char * argv[])
 {
+    // the preference file, next to the executable for now
+    const char * prefName = "GM_Prefs.txt";
+    
+    
+    
+    // the output filename, hardcoded for now
     const char * fname ="wavetableOSCTest.aif";
     SNDFILE	* file;
     SF_INFO sfinfo;
     int soundSize = 8192;
     
     // print info
-    printf("Welcome to the whole grains bakery!\n");
-    printf("Creating the sound loaf.\n");
+    printf("Welcome to the Glory Machine!\n");
+    printf("Creating some glorious sound for you.\n");
     
     // Allocate memory for the audio buffer
     float* audioBuffer = (float*)malloc(sizeof(float)*SOUND_LENGTH);
@@ -112,7 +118,6 @@ void mixer(void * outBuf, float * inBuf, UInt32 numBytes, UInt32 * bytesWritten)
     }
     
     while (bytesThisTime<numBytes && totalSamplesWritten<SOUND_LENGTH) {
-        // not sure I'm using the void * properly
         localBuf[i] = inBuf[totalSamplesWritten];
         i++;
         totalSamplesWritten++;

@@ -53,7 +53,8 @@ void wavetableOsc(float * buffer, int bufferSize, float * wavetable, int wavetab
         watchMe = w1 + ((w2-w1)*indexRem);
         buffer[n] = watchMe*amp;
         
-        // manage phasor (increment or wrap around
+        // manage phasor (increment or wrap around)
+        // why do we subtract wavetableSize?
         if (indexInt<wavetableSize) {i += phaseIncr;} else {i -= wavetableSize;}
     }
 }
