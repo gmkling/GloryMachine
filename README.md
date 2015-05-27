@@ -1,0 +1,2 @@
+# GloryMachine
+This is my project for me to play with the traditional way of creating function graphs for software sythesizers in C: by throwing around and chaining together function pointers and triggering their execution through audio device buffer callbacks. I would like to explore the idea of creating a simple language to specify the language, and I have been weighing the benefits of going either in the direction of "More C" (even leaner) vs the idea of using advanced C++ constructs to make implementing certain language features and audio processes easier.
